@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon: Emotionality & Earnestness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        earnest: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            900: '#78350f',
+                        },
+                        emotion: {
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            800: '#9d174d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.03); opacity: 0.92; }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-stone-950 text-stone-100 font-sans min-h-screen flex flex-col items-center justify-center p-4 md:p-8 selection:bg-rose-500 selection:text-white">
+
+    <!-- Chosen Palette: Warm Gold, Radiant Rose & Deep Amber -->
+    <!-- Application Structure Plan: Designed as an interactive canvas display showcase centered on an icon representing emotional depth and sincere earnestness. Includes real-time rendering adjustments, symbolic element breakdowns, and customizable theme modes to explore different emotional tones. -->
+    <!-- Visualization & Content Choices: Canvas 2D API for high-fidelity glowing gradients, radiant particles, bezier heart-core, and open lotus-flame halo representing unfiltered emotional expression and open-hearted sincerity. Strictly NO SVG used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <main class="max-w-4xl w-full bg-stone-900/80 backdrop-blur-xl border border-stone-800 rounded-3xl p-6 md:p-10 shadow-2xl space-y-8">
+        
+        <!-- Header -->
+        <header class="text-center space-y-2">
+            <div class="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-widest text-amber-400 bg-amber-950/60 border border-amber-800/50 px-3.5 py-1 rounded-full">
+                <span>Visual Symbolism</span>
+                <span>•</span>
+                <span>Interactive Canvas Icon</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-serif font-bold tracking-tight text-white">
+                The Radiant Hearth
+            </h1>
+            <p class="text-stone-400 text-sm md:text-base max-w-xl mx-auto">
+                An icon designed to represent <span class="text-rose-400 font-medium">Emotionality</span> (unfiltered feeling, vulnerability, dynamic warmth) and <span class="text-amber-400 font-medium">Earnestness</span> (sincerity, truth, grounded depth).
+            </p>
+        </header>
+
+        <!-- Canvas Container Display -->
+        <div class="flex flex-col items-center justify-center space-y-6">
+            <div class="relative group flex items-center justify-center">
+                <!-- Glowing Aura -->
+                <div id="auraBg" class="absolute inset-0 bg-gradient-to-tr from-rose-600/30 via-amber-500/20 to-pink-500/30 rounded-full blur-3xl animate-pulse-slow transition-all duration-700"></div>
+                
+                <!-- Main Canvas Element -->
+                <canvas id="iconCanvas" width="360" height="360" class="relative z-10 rounded-2xl bg-stone-950/90 border border-stone-800 shadow-2xl cursor-pointer transition-transform duration-500 hover:scale-105"></canvas>
+            </div>
+
+            <!-- Interactive Palette Control Bar -->
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <button onclick="setPalette('roseGold')" id="btn-roseGold" class="palette-btn px-4 py-2 rounded-xl text-xs font-semibold border border-amber-500/80 bg-amber-500/10 text-amber-300 transition-all shadow-sm">
+                    Warm Rose & Gold (Classic)
+                </button>
+                <button onclick="setPalette('deepEmerald')" id="btn-deepEmerald" class="palette-btn px-4 py-2 rounded-xl text-xs font-semibold border border-stone-700 bg-stone-800/80 text-stone-300 hover:border-emerald-500/60 transition-all">
+                    Sincere Emerald & Amber
+                </button>
+                <button onclick="setPalette('sapphireFlame')" id="btn-sapphireFlame" class="palette-btn px-4 py-2 rounded-xl text-xs font-semibold border border-stone-700 bg-stone-800/80 text-stone-300 hover:border-sky-500/60 transition-all">
+                    Vulnerable Sapphire & Coral
+                </button>
+            </div>
+        </div>
+
+        <!-- Symbolic Breakdown -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-stone-800">
+            <div class="bg-stone-950/60 p-4 rounded-xl border border-stone-800/80 space-y-1.5">
+                <div class="flex items-center space-x-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span>
+                    <h3 class="text-sm font-semibold text-stone-200">The Pulsing Core</h3>
+                </div>
+                <p class="text-xs text-stone-400 leading-relaxed">
+                    A stylized heart-flame motif symbolizing raw emotional depth, affection, and the living pulse of human feeling.
+                </p>
+            </div>
+
+            <div class="bg-stone-950/60 p-4 rounded-xl border border-stone-800/80 space-y-1.5">
+                <div class="flex items-center space-x-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block"></span>
+                    <h3 class="text-sm font-semibold text-stone-200">The Upright Crown</h3>
+                </div>
+                <p class="text-xs text-stone-400 leading-relaxed">
+                    Unfolding petal-rays projecting upward represent earnestness—unmasked honesty, open intention, and integrity.
+                </p>
+            </div>
+
+            <div class="bg-stone-950/60 p-4 rounded-xl border border-stone-800/80 space-y-1.5">
+                <div class="flex items-center space-x-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-pink-300 inline-block"></span>
+                    <h3 class="text-sm font-semibold text-stone-200">Radiant Resonance</h3>
+                </div>
+                <p class="text-xs text-stone-400 leading-relaxed">
+                    Concentric golden rings and gentle floating embers symbolize how genuine earnestness resonates and warms surrounding lives.
+                </p>
+            </div>
+        </section>
+
+        <!-- Dynamic Controls -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 text-xs text-stone-400">
+            <div class="flex items-center space-x-4">
+                <label class="flex items-center space-x-2 cursor-pointer">
+                    <input type="checkbox" id="pulseToggle" checked class="rounded border-stone-700 text-rose-500 focus:ring-rose-500 bg-stone-900">
+                    <span>Pulse Animation</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                    <input type="checkbox" id="particleToggle" checked class="rounded border-stone-700 text-amber-500 focus:ring-amber-500 bg-stone-900">
+                    <span>Floating Embers</span>
+                </label>
+            </div>
+            <p class="font-mono text-[11px] text-stone-500">Rendered with pure HTML5 Canvas (Zero SVG)</p>
+        </div>
+
+    </main>
+
+    <script>
+        const canvas = document.getElementById('iconCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let animationFrameId;
+        let time = 0;
+
+        let activePalette = {
+            primary: '#ec4899',   // Rose
+            secondary: '#f59e0b', // Gold / Amber
+            tertiary: '#f43f5e',  // Deep Flame
+            glow: 'rgba(236, 72, 153, 0.25)',
+            particle: '#fef3c7'
+        };
+
+        const palettes = {
+            roseGold: {
+                primary: '#ec4899',
+                secondary: '#f59e0b',
+                tertiary: '#f43f5e',
+                glow: 'rgba(245, 158, 11, 0.3)',
+                particle: '#fef3c7'
+            },
+            deepEmerald: {
+                primary: '#10b981',
+                secondary: '#f59e0b',
+                tertiary: '#059669',
+                glow: 'rgba(16, 185, 129, 0.3)',
+                particle: '#d1fae5'
+            },
+            sapphireFlame: {
+                primary: '#38bdf8',
+                secondary: '#fb7185',
+                tertiary: '#0284c7',
+                glow: 'rgba(56, 189, 248, 0.3)',
+                particle: '#e0f2fe'
+            }
+        };
+
+        // Floating particles (Embers of sincerity)
+        const particles = Array.from({ length: 24 }, () => ({
+            x: (Math.random() - 0.5) * 220,
+            y: (Math.random() - 0.5) * 220,
+            size: Math.random() * 2 + 0.8,
+            speedY: Math.random() * 0.4 + 0.1,
+            alpha: Math.random() * 0.7 + 0.3
+        }));
+
+        function setPalette(name) {
+            activePalette = palettes[name];
+
+            document.querySelectorAll('.palette-btn').forEach(btn => {
+                btn.className = "palette-btn px-4 py-2 rounded-xl text-xs font-semibold border border-stone-700 bg-stone-800/80 text-stone-300 hover:border-stone-500 transition-all";
+            });
+
+            const activeBtn = document.getElementById(`btn-${name}`);
+            if (activeBtn) {
+                activeBtn.className = "palette-btn px-4 py-2 rounded-xl text-xs font-semibold border border-amber-500/80 bg-amber-500/10 text-amber-300 transition-all shadow-sm";
+            }
+        }
+
+        function drawIcon() {
+            const width = canvas.width;
+            const height = canvas.height;
+            const cx = width / 2;
+            const cy = height / 2;
+
+            const isPulsing = document.getElementById('pulseToggle').checked;
+            const showParticles = document.getElementById('particleToggle').checked;
+
+            if (isPulsing) {
+                time += 0.025;
+            }
+
+            const pulseScale = isPulsing ? 1 + Math.sin(time) * 0.035 : 1;
+            const glowOpacity = isPulsing ? 0.3 + Math.sin(time) * 0.1 : 0.3;
+
+            ctx.clearRect(0, 0, width, height);
+
+            // 1. Outer Radial Glow (Warmth)
+            const outerGlow = ctx.createRadialGradient(cx, cy, 10, cx, cy, 160);
+            outerGlow.addColorStop(0, activePalette.glow);
+            outerGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+            ctx.fillStyle = outerGlow;
+            ctx.beginPath();
+            ctx.arc(cx, cy, 160, 0, Math.PI * 2);
+            ctx.fill();
+
+            // 2. Floating Embers / Particles
+            if (showParticles) {
+                particles.forEach(p => {
+                    p.y -= p.speedY;
+                    if (p.y < -120) p.y = 120;
+
+                    ctx.save();
+                    ctx.globalAlpha = p.alpha * (0.6 + Math.sin(time + p.x) * 0.4);
+                    ctx.fillStyle = activePalette.particle;
+                    ctx.beginPath();
+                    ctx.arc(cx + p.x, cy + p.y, p.size, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                });
+            }
+
+            // 3. Grounded Earnestness Geometry (Outer Rings of Integrity)
+            ctx.save();
+            ctx.translate(cx, cy);
+            ctx.scale(pulseScale, pulseScale);
+
+            // Outer Dashed Halo
+            ctx.strokeStyle = activePalette.secondary;
+            ctx.globalAlpha = 0.4;
+            ctx.lineWidth = 1.5;
+            ctx.setLineDash([4, 8]);
+            ctx.beginPath();
+            ctx.arc(0, 0, 115, 0, Math.PI * 2);
+            ctx.stroke();
+
+            // Solid Integrity Ring
+            ctx.setLineDash([]);
+            ctx.globalAlpha = 0.6;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.arc(0, 0, 95, 0, Math.PI * 2);
+            ctx.stroke();
+
+            // 4. Radiant Lotus Rays (Upward Sincerity)
+            const rayCount = 12;
+            for (let i = 0; i < rayCount; i++) {
+                const angle = (i * Math.PI * 2) / rayCount - Math.PI / 2;
+                const rayLen = 75 + (i % 2 === 0 ? 12 : 0);
+                
+                ctx.save();
+                ctx.rotate(angle);
+                ctx.strokeStyle = activePalette.secondary;
+                ctx.globalAlpha = 0.35 + (Math.sin(time + i) * 0.15);
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(0, -45);
+                ctx.lineTo(0, -rayLen);
+                ctx.stroke();
+                
+                // Small tip node
+                ctx.fillStyle = activePalette.secondary;
+                ctx.beginPath();
+                ctx.arc(0, -rayLen - 3, 2, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+
+            // 5. Emotional Core - Stylized Heart & Open Flame
+            ctx.save();
+            
+            // Core Gradient
+            const heartGrad = ctx.createLinearGradient(0, -50, 0, 50);
+            heartGrad.addColorStop(0, activePalette.secondary);
+            heartGrad.addColorStop(0.4, activePalette.primary);
+            heartGrad.addColorStop(1, activePalette.tertiary);
+
+            ctx.fillStyle = heartGrad;
+            ctx.shadowColor = activePalette.primary;
+            ctx.shadowBlur = 25;
+
+            // Heart/Flame Bezier Path
+            ctx.beginPath();
+            ctx.moveTo(0, 38);
+            
+            // Left curve
+            ctx.bezierCurveTo(-48, 10, -52, -30, -22, -42);
+            ctx.bezierCurveTo(-8, -48, 0, -32, 0, -25);
+            
+            // Right curve
+            ctx.bezierCurveTo(0, -32, 8, -48, 22, -42);
+            ctx.bezierCurveTo(52, -30, 48, 10, 0, 38);
+            
+            ctx.closePath();
+            ctx.fill();
+
+            // Inner Earnest Tear/Flame Highlight
+            const innerFlame = ctx.createLinearGradient(0, -30, 0, 20);
+            innerFlame.addColorStop(0, '#ffffff');
+            innerFlame.addColorStop(1, activePalette.secondary);
+
+            ctx.fillStyle = innerFlame;
+            ctx.globalAlpha = 0.85;
+            ctx.shadowBlur = 10;
+            ctx.beginPath();
+            ctx.moveTo(0, 18);
+            ctx.bezierCurveTo(-18, 0, -18, -20, 0, -32);
+            ctx.bezierCurveTo(18, -20, 18, 0, 0, 18);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.restore();
+            ctx.restore();
+
+            animationFrameId = requestAnimationFrame(drawIcon);
+        }
+
+        // Start animation loop
+        drawIcon();
+    </script>
+</body>
+</html>
